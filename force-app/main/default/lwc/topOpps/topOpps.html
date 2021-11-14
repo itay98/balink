@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <h1 if:true={sub} class="slds-p-bottom_small slds-p-left_small">
+            Listening to Opportunities. Last updated: <lightning-formatted-date-time value={created} month="numeric"
+                day="numeric" hour="2-digit" minute="2-digit" second="2-digit"></lightning-formatted-date-time>
+        </h1>
+        <template if:true={list.data}>
+            <lightning-datatable data={list.data} columns={columns} key-field="Id" hide-checkbox-column>
+            </lightning-datatable>
+        </template>
+        <h1 class="slds-align_absolute-center" if:true={list.error}>{list.error.body.message}</h1>
+    </lightning-card>
+</template>

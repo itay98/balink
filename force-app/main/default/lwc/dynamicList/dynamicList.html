@@ -1,3 +1,29 @@
 <template>
-    
+    <lightning-card>
+        <template if:true={records}>
+            <lightning-layout>
+                <lightning-layout-item class="slds-m-horizontal_x-small">Total Records: {total}</lightning-layout-item>
+                <lightning-layout-item class="slds-m-horizontal_x-small">
+                    <lightning-combobox label="Page Size" value={pageSize} options={sizeOpt}
+                        onchange={pageSizeChange}></lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-horizontal_x-small">
+                    <lightning-button label="1" icon-name="utility:jump_to_left" icon-position="right"
+                        onclick={moveToFirst}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-horizontal_x-small">
+                    <lightning-combobox label="Page Number" value={pageNum} options={numOpt}
+                        onchange={pageNumChange}></lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-horizontal_x-small">
+                    <lightning-button label={last} icon-name="utility:jump_to_right" onclick={moveToLast}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-datatable data={data} columns={columns} key-field="Id" hide-checkbox-column
+                show-row-number-column row-number-offset={offset}>
+            </lightning-datatable>
+        </template>
+        <h1 class="slds-align_absolute-center">{err}</h1>
+    </lightning-card>
 </template>

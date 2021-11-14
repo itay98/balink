@@ -4,5 +4,17 @@
     <isExposed>true</isExposed>
     <targets>
         <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="rln" label="Related List Name" type="String" required="true" />
+            <property name="fields" label="fields to display" type="String" description="list of fields separated by a comma" required="true" />
+        </targetConfig>
+        <targetConfig targets="lightning__HomePage">
+            <property name="mainObj" label="Main Object" type="String" required="true" />
+            <property name="fields" label="fields to display" type="String" description="list of fields separated by a comma" required="true" />
+            <property name="cond" label="WHERE condition" type="String" description="this input will be the WHERE condition of the query" />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
