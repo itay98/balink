@@ -6,6 +6,6 @@
 //     SFDX: Execute Anonymous Apex with Editor Contents
 Data.createRecords(10);
 Data.deleteRecords();
-string tempvar = 'Enter_your_name_here';
-System.debug('Hello World!');//OpportunityLineItems OpportunityId,Product2Id,Quantity,TotalPrice
-System.debug('My name is ' + tempvar);//Opportunities Name,StageName,CloseDate,Amount
+string tempvar = 'https://github.com/itay98/balink';
+System.debug('Hello World!');
+System.debug('My repo is ' + tempvar);
