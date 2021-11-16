@@ -32,9 +32,6 @@ public class Data {
         insert oli;
     }
     public static void deleteRecords(){
-        delete [select Id from OpportunityLineItem];
-        delete [select Id from Opportunity];
-        delete [select Id from PricebookEntry where Name!=NULL];
         delete [select Id from Product2];
         delete [select Id from Account];
     }
